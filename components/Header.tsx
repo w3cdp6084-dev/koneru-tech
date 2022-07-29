@@ -24,14 +24,15 @@ const { colorMode, toggleColorMode } = useColorMode();
                             Next.js microCMS Blog
                         </Heading>
                     </Link>
-                    <Box>
+                    <Flex py="4" justifyContent="space-between" alignItems="center">
                         <DrawerMenu/>
-                    </Box>
-                    <Box className={styles.btnOuter}>
-                        <Button onClick={toggleColorMode} className={styles.btnInner}>
-                            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                        </Button>
-                    </Box>
+                        <Box className={styles.btnOuter}>
+
+                            <Button onClick={toggleColorMode} className={styles.btnInner}>
+                                {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                            </Button>
+                        </Box>
+                    </Flex>
                 </Flex>
             </Container>
         </Box>
