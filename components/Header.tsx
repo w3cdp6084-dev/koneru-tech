@@ -11,6 +11,7 @@ import {
     Button
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { DrawerMenu } from '../components/DrawerMenu';
 
 export const Header:FC= () => {
 const { colorMode, toggleColorMode } = useColorMode();
@@ -23,6 +24,9 @@ const { colorMode, toggleColorMode } = useColorMode();
                             Next.js microCMS Blog
                         </Heading>
                     </Link>
+                    <Box>
+                        <DrawerMenu/>
+                    </Box>
                     <Box className={styles.btnOuter}>
                         <Button onClick={toggleColorMode} className={styles.btnInner}>
                             {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
