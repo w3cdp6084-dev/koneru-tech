@@ -9,6 +9,7 @@ import {
     DrawerCloseButton,
     useDisclosure
 } from '@chakra-ui/react';
+import { Navigation } from '../components/Navigation';
 
 export const DrawerMenu = () => {
     const [size, setSize] = React.useState('')
@@ -36,9 +37,7 @@ export const DrawerMenu = () => {
             <DrawerCloseButton />
             <DrawerHeader>{`test`}</DrawerHeader>
             <DrawerBody>
-              <p>
-                test
-              </p>
+            <Navigation />
             </DrawerBody>
           </DrawerContent>
         </Drawer>
