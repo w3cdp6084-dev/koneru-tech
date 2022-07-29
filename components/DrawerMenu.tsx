@@ -35,7 +35,7 @@ export const DrawerMenu = () => {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>{`test`}</DrawerHeader>
+            <DrawerHeader>{`KONERU TECH`}</DrawerHeader>
             <DrawerBody>
             <Navigation />
             </DrawerBody>

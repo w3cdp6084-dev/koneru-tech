@@ -11,10 +11,10 @@ const HoverLink : FC<LinkProps> = (props) => {
 export const Navigation = () => {
   return (
     <Stack as="nav">
-      <HoverLink href="/burger">Burger</HoverLink>
-      <HoverLink href="/sidemenu">Sidemenu</HoverLink>
-      <HoverLink href="/drink">Drink</HoverLink>
-      <HoverLink href="/takeout">Takeout</HoverLink>
+      <HoverLink href="/">HOME</HoverLink>
+      <HoverLink href="/">ABOUT</HoverLink>
+      <HoverLink href="/">POST</HoverLink>
+      <HoverLink href="/">CONTACT</HoverLink>
     </Stack>
   )
 }
