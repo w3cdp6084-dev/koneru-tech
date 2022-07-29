@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from "../styles/components/Header.module.scss"
 import {
     Button,
     Drawer,
@@ -27,7 +28,9 @@ export const DrawerMenu = () => {
             onClick={() => handleClick(size)}
             key={size}
             m={4}
-          ><div>MENU</div>{`😸`}
+            className={styles.menuBg}
+          >
+          <div className={styles.menuWrap}>MENU<br />{`😸`}</div>
           </Button>
         ))}
   

@@ -21,13 +21,12 @@ const { colorMode, toggleColorMode } = useColorMode();
                 <Flex as="header" py="4" justifyContent="space-between" alignItems="center">
                     <Link href="/" passHref>
                         <Heading as='h1' fontSize="2xl" cursor="pointer" color={useColorModeValue('gray.600', 'white')}>
-                            Next.js microCMS Blog
+                            LOGO
                         </Heading>
                     </Link>
                     <Flex py="4" justifyContent="space-between" alignItems="center">
                         <DrawerMenu/>
                         <Box className={styles.btnOuter}>
-
                             <Button onClick={toggleColorMode} className={styles.btnInner}>
                                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                             </Button>
