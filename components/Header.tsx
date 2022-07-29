@@ -1,3 +1,4 @@
+import styles from "../styles/components/Header.module.scss"
 import Link from 'next/link'
 import { FC } from 'react';
 import {
@@ -12,9 +13,9 @@ import {
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 export const Header:FC= () => {
-    const { colorMode, toggleColorMode } = useColorMode();
+const { colorMode, toggleColorMode } = useColorMode();
   return (
-        <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+        <Box>
             <Container maxW="container.lg">
                 <Flex as="header" py="4" justifyContent="space-between" alignItems="center">
                     <Link href="/" passHref>
@@ -22,9 +23,11 @@ export const Header:FC= () => {
                             Next.js microCMS Blog
                         </Heading>
                     </Link>
-                    <Button size='lg' onClick={toggleColorMode}>
-                        {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
-                    </Button>
+                    <Box className={styles.btnOuter}>
+                        <Button onClick={toggleColorMode} className={styles.btnInner}>
+                            {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+                        </Button>
+                    </Box>
                 </Flex>
             </Container>
         </Box>
