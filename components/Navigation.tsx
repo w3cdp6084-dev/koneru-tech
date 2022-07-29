@@ -1,12 +1,5 @@
 import { FC } from 'react';
 import {
-    Box,
-    Flex,
-    Container,
-    Heading,
-    useColorMode,
-    useColorModeValue,
-    Button,
     Stack,
     LinkProps,
     Link,
