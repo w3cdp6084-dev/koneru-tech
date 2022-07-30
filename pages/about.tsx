@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function About() {
     return (
-      <main className="mt-20 main-img text-center px-10 py-6 mx-auto">
+      <main className="">
         <section>
             <div>
                 <Image src="/images/logo.png" width={150} height={150} alt="logo" />
