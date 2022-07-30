@@ -12,7 +12,7 @@ export const Navigation = () => {
   return (
     <Stack as="nav">
       <HoverLink href="/">HOME</HoverLink>
-      <HoverLink href="/">ABOUT</HoverLink>
+      <HoverLink href="/about">ABOUT</HoverLink>
       <HoverLink href="/">POST</HoverLink>
       <HoverLink href="/">CONTACT</HoverLink>
     </Stack>
