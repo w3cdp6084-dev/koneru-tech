@@ -3,7 +3,6 @@ import styles from '../styles/pages/about.module.scss'
 
 import {
   Box,
-
 } from '@chakra-ui/react';
 export default function About() {
     return (
