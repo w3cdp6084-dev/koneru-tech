@@ -1,12 +1,7 @@
 import Image from 'next/image'
-import styles from '../styles/components/Layout.module.scss'
-
+import styles from '../styles/pages/about.module.scss'
 import {
   Box,
-  Flex,
-  Container,
-  useColorMode,
-  useColorModeValue,
 } from '@chakra-ui/react';
 export default function About() {
     return (
