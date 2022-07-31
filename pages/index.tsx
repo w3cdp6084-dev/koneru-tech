@@ -25,7 +25,11 @@ export default function Home({blogs,news,recommend}: Props) {
                 src={blogs.eye_catch.url}
                 alt="test"
               />
+              <div>
+                <p className={styles.Title}>{blogs.title}</p>
+              </div>
             </div>
+
           </Link>
           ))}
         </div>
