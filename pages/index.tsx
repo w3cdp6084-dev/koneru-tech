@@ -29,7 +29,6 @@ export default function Home({blogs,news,recommend}: Props) {
                 <p className={styles.Title}>{blogs.title}</p>
               </div>
             </div>
-
           </Link>
           ))}
         </div>
