@@ -45,7 +45,7 @@ export default function Home({blogs,news,recommend}: Props) {
   )
 }
 export const getServerSideProps = async () => {
-  const blogs = await client.get({ endpoint: 'blog',queries: { limit: 4, offset: 0}});
+  const blogs = await client.get({ endpoint: 'blog',queries: { limit: 3, offset: 0}});
   const news = await client.get({ endpoint: 'new',queries: { limit: 4, offset: 0} });
   const recommend = await client.get({ endpoint: 'recommend',queries: { limit: 4, offset: 0} });
 
