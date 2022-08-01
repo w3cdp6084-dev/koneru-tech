@@ -9,12 +9,31 @@
     margin: 0 auto;
 }
 .cardWrap{
-    width: 25rem;
-    height: 15rem;
-    display: grid;
-    place-items: center;
+    width: 100%;
+    display: flex;
+    div{
+        margin: 16px 24px;
+    }
 }
+
 .textH2{
     font-size: 1.5rem;
     font-weight: bold;
+}
+.title{
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #262626;
+    margin: 16px 0;
+}
+.date{
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #262626;
+    display: flex;
+}    
+.date::before{
+    content: "🕛";
+    display: block;
+    margin: 0 4px 0 0;
 }

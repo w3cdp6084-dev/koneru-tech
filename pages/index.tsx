@@ -10,10 +10,9 @@ import styles from '../styles/components/Slide.module.scss'
 type Props = {
   blogs: Array<Blog>;
   news: Array<Blog>;
-  recommend: Array<Blog>;
 };
 
-export default function Home({blogs,news,recommend}: Props) {
+export default function Home({blogs,news}: Props) {
   return(
     <Box className={styles.wrap}>
       <div className={styles.slideWrap}>
@@ -22,15 +21,13 @@ export default function Home({blogs,news,recommend}: Props) {
           <div className={styles.cardWrap}>
             {blogs.map(blogs => (
             <Link href={`/blogs/${blogs.id}`} passHref>
-              <div key={blogs.id} >
+              <div key={blogs.id}>
                 <img
                   src={blogs.eye_catch.url}
                   alt="test"
                   className={styles.slide}
                 />
-                <div>
-                  <p className={styles.Title}>{blogs.title}</p>
-                </div>
+                <p className={styles.title}>{blogs.title}</p>
                 <Moment format="YYYY/MM/DD" className={styles.date}>
                   {blogs.publishedAt}
                 </Moment>
@@ -47,13 +44,11 @@ export default function Home({blogs,news,recommend}: Props) {
 export const getServerSideProps = async () => {
   const blogs = await client.get({ endpoint: 'blog',queries: { limit: 3, offset: 0}});
   const news = await client.get({ endpoint: 'new',queries: { limit: 4, offset: 0} });
-  const recommend = await client.get({ endpoint: 'recommend',queries: { limit: 4, offset: 0} });
 
   return {
     props: {
       blogs: blogs.contents,
       news: news.contents,
-      recommend: recommend.contents,
     },
   };
 };
