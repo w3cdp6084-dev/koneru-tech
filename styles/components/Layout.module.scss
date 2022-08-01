@@ -1,7 +1,22 @@
 .wrap{
     display: grid;
     place-items: center;
+
 }
 .inner{
+    width: 100%;
     max-width: 72rem;
+    gap: 80px;
+    grid-template-columns: 2fr 1fr;
+}
+.contentLeft{
+    width: 48.25rem;
+    .blogTitle{
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #262626;
+    }
+}
+.toc{
+    width: 18.75rem;
 }
