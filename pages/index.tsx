@@ -15,24 +15,26 @@ type Props = {
 export default function Home({blogs,news,recommend}: Props) {
   return(
     <Box>
-      <section>
-        <h2 className={styles.textH2}>人気の記事😽</h2>
-        <div>
-          {blogs.map(blogs => (
-          <Link href={`/blogs/${blogs.id}`} passHref>
-            <div key={blogs.id}>
-              <img
-                src={blogs.eye_catch.url}
-                alt="test"
-              />
-              <div>
-                <p className={styles.Title}>{blogs.title}</p>
+      <div>
+        <section>
+          <h2 className={styles.textH2}>人気の記事😽</h2>
+          <div>
+            {blogs.map(blogs => (
+            <Link href={`/blogs/${blogs.id}`} passHref>
+              <div key={blogs.id}>
+                <img
+                  src={blogs.eye_catch.url}
+                  alt="test"
+                />
+                <div>
+                  <p className={styles.Title}>{blogs.title}</p>
+                </div>
               </div>
-            </div>
-          </Link>
-          ))}
-        </div>
-      </section>
+            </Link>
+            ))}
+          </div>
+        </section>
+      </div>
       <section>
         <h1>新着の記事🐱</h1>
           <div>
