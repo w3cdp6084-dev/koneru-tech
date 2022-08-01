@@ -1,0 +1,20 @@
+.wrap{
+    width: 100%;
+}
+.slideWrap{
+    max-width: 77rem;
+    border: 4px solid #FBE21F;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 0 auto;
+}
+.cardWrap{
+    width: 25rem;
+    height: 15rem;
+    display: grid;
+    place-items: center;
+}
+.textH2{
+    font-size: 1.5rem;
+    font-weight: bold;
+}

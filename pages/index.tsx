@@ -1,10 +1,11 @@
 import { client } from '../libs/client';
 import type { Blog } from '../types/blog';
 import Link from 'next/link';
+import Moment from 'react-moment'
 import {
   Box,
 } from '@chakra-ui/react';
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/components/Slide.module.scss'
 
 type Props = {
   blogs: Array<Blog>;
@@ -14,57 +15,31 @@ type Props = {
 
 export default function Home({blogs,news,recommend}: Props) {
   return(
-    <Box>
-      <div>
+    <Box className={styles.wrap}>
+      <div className={styles.slideWrap}>
         <section>
           <h2 className={styles.textH2}>人気の記事😽</h2>
-          <div>
+          <div className={styles.cardWrap}>
             {blogs.map(blogs => (
             <Link href={`/blogs/${blogs.id}`} passHref>
-              <div key={blogs.id}>
+              <div key={blogs.id} >
                 <img
                   src={blogs.eye_catch.url}
                   alt="test"
+                  className={styles.slide}
                 />
                 <div>
                   <p className={styles.Title}>{blogs.title}</p>
                 </div>
+                <Moment format="YYYY/MM/DD" className={styles.date}>
+                  {blogs.publishedAt}
+                </Moment>
               </div>
             </Link>
             ))}
           </div>
         </section>
       </div>
-      <section>
-        <h1>新着の記事🐱</h1>
-          <div>
-            {news.map(news => (
-            <Link href={`/news/${news.id}`} passHref>
-              <div key={news.id}>
-                <img
-                  src={news.eye_catch.url}
-                  alt="test"
-                />
-              </div>
-            </Link>
-            ))}
-          </div>
-      </section>
-      <section>
-        <h1>おすすめの記事😻</h1>
-          <div>
-            {recommend.map(recommend => (
-            <Link href={`/recommend/${recommend.id}`} passHref>
-              <div key={recommend.id}>
-                <img
-                  src={recommend.eye_catch.url}
-                  alt="test"
-                />
-              </div>
-            </Link>
-            ))}
-          </div>
-      </section>
     </Box>
     
   )
