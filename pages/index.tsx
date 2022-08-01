@@ -2,9 +2,6 @@ import { client } from '../libs/client';
 import type { Blog } from '../types/blog';
 import Link from 'next/link';
 import Moment from 'react-moment'
-import {
-  Box,
-} from '@chakra-ui/react';
 import styles from '../styles/components/Slide.module.scss'
 
 type Props = {
@@ -14,7 +11,7 @@ type Props = {
 
 export default function Home({blogs,news}: Props) {
   return(
-    <Box className={styles.wrap}>
+    <div className={styles.wrap}>
       <div className={styles.slideWrap}>
         <section>
           <h2 className={styles.textH2}>人気の記事😽</h2>
@@ -37,7 +34,7 @@ export default function Home({blogs,news}: Props) {
           </div>
         </section>
       </div>
-    </Box>
+    </div>
     
   )
 }
