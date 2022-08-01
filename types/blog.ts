@@ -14,4 +14,9 @@ export type Blog = {
     }
     tag: string;
     toc_visible: string;
+    tag_icon: {
+      url: string;
+      height: number;
+      width: number;
+    }
   }

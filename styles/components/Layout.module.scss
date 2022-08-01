@@ -20,3 +20,28 @@
 .toc{
     width: 18.75rem;
 }
+.date{
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #262626;
+    display: flex;
+}    
+.date::before{
+    content: "🕛";
+    display: block;
+    margin: 0 4px 0 0;
+}
+.tagLink{
+    width: 13%;
+}
+.tagWrap{
+    display: flex;
+    padding: 8px;
+    flex-wrap: wrap;
+    width: 13%;
+}
+.icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 4px 0 0;
+}

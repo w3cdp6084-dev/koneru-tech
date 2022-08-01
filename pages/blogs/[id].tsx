@@ -3,6 +3,8 @@ import type { Blog } from '../../types/blog';
 import { client } from '../../libs/client';
 import { TableOfContents } from '../../components/TableOfContent';
 import { renderToc } from '../../libs/render-toc';
+import Moment from 'react-moment'
+import Link from 'next/link';
 import {
   Flex,
 } from '@chakra-ui/react';
@@ -21,13 +23,28 @@ export default function Blog({ blogs }: Props) {
             <div className={styles.blogTitle}>
               {blogs.title}
             </div>
-          {blogs.tag && (
-            <div className="flex items-center justify-start mt-4 mb-4">
-              <div className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg">
-                #{blogs.tag}
-              </div>
-            </div>
-          )}
+            <Moment format="YYYY/MM/DD" className={styles.date}>
+              {blogs.publishedAt}
+            </Moment>
+            <Link href="https://github.com/w3cdp6084-dev">
+              <a className={styles.tagLink}>
+                <div className={styles.tagWrap}>
+                  <div className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg">
+                    <img
+                    className={styles.icon}
+                    src={blogs.tag_icon.url}
+                    />
+                  </div>
+                  {blogs.tag && (
+                    <div className="flex items-center justify-start mt-4 mb-4">
+                      <div className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg">
+                        {blogs.tag}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </a>
+            </Link>
           <div className="mt-2">
             <div dangerouslySetInnerHTML={{ __html: blogs.content }} />
           </div>
