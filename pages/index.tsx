@@ -1,4 +1,4 @@
-import { client } from '../src/libs/client';
+import { client } from '../libs/client';
 import type { Blog } from '../types/blog';
 import Link from 'next/link';
 import {

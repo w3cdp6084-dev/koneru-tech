@@ -1,12 +1,15 @@
 import { GetServerSideProps } from 'next';
 import type { Blog } from '../../types/blog';
-import { client } from '../../src/libs/client';
-
+import { client } from '../../libs/client';
+import { TableOfContents } from '../../components/TableOfContent';
+import { renderToc } from '../../libs/render-toc';
 type Props = {
     blogs: Blog;
 };
 
-export default function Article({ blogs }: Props) {
+export default function Blog({ blogs }: Props) {
+  const toc = renderToc(blogs.content);
+
   return (
     <div>
       <div>
@@ -16,6 +19,11 @@ export default function Article({ blogs }: Props) {
               {blogs.title}
             </div>
           </div>
+
+          <div className="mt-2">
+            <div dangerouslySetInnerHTML={{ __html: blogs.content }} />
+          </div>
+
           {blogs.tag && (
             <div className="flex items-center justify-start mt-4 mb-4">
               <div className="px-2 py-1 font-bold bg-red-400 text-white rounded-lg">
@@ -27,15 +35,11 @@ export default function Article({ blogs }: Props) {
             className="object-cover w-full shadow-sm h-full"
             src={blogs.eye_catch.url}
           />
-          <div className="mt-2">
-            <div dangerouslySetInnerHTML={{ __html: blogs.content }} />
-          </div>
-          <div className="mt-2">
-            <div className="text-2xl text-gray-700 mt-4 rounded ">
-              {blogs.body}
-            </div>
-          </div>
+          {blogs.toc_visible && (
+          <TableOfContents toc={toc} />
+          )}
         </div>
+
       </div>
     </div>
   );
